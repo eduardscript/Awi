@@ -1,0 +1,12 @@
+/Users/edscript/Projects/Awi/Domain/bin/Debug/net7.0/Domain.deps.json
+/Users/edscript/Projects/Awi/Domain/bin/Debug/net7.0/Domain.dll
+/Users/edscript/Projects/Awi/Domain/bin/Debug/net7.0/Domain.pdb
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.csproj.AssemblyReference.cache
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.AssemblyInfoInputs.cache
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.AssemblyInfo.cs
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.csproj.CoreCompileInputs.cache
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.dll
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/refint/Domain.dll
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/Domain.pdb
+/Users/edscript/Projects/Awi/Domain/obj/Debug/net7.0/ref/Domain.dll

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ALsC213A1LSqslmStrxpxp+MBPysGZ70wo4Y6Nm4GAzMEjL2ZTQoWi2aFo+SktkbzjpdKdL+RIXtAm8AVQMb8A==",
+  "success": true,
+  "projectFilePath": "/Users/edscript/Projects/Awi/Application/Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/edscript/.nuget/packages/mediatr/11.0.0/mediatr.11.0.0.nupkg.sha512",
+    "/Users/edscript/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
+    "/Users/edscript/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.0.0/mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "/Users/edscript/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
