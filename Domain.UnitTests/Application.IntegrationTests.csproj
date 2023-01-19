@@ -34,8 +34,8 @@
     <None Remove="Categories\GetCategoriesWithPagination\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Categories\" />
     <Folder Include="Categories\CreateCategory\" />
     <Folder Include="Categories\GetCategoriesWithPagination\" />
+    <Folder Include="Categories\DeleteCategory\" />
   </ItemGroup>
 </Project>

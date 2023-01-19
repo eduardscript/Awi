@@ -19,8 +19,6 @@
     <None Remove="Categories\Queries\GetCategoriesWithPagination\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Categories\" />
-    <Folder Include="Categories\Commands\" />
     <Folder Include="Categories\Queries\" />
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Common\" />
