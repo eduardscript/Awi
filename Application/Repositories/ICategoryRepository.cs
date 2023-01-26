@@ -1,11 +1,6 @@
-﻿using System;
-using Application.Repositories.Common;
-using Domain.Entities;
+﻿using Application.Repositories.Common;
 
-namespace Application.Repositories
-{
-	public interface ICategoryRepository : IGenericRepository<Category>
-	{
-	}
-}
+namespace Application.Repositories;
 
+public interface ICategoryRepository : IGenericRepository<Category>
+{ }
