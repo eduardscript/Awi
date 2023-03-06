@@ -41,11 +41,14 @@ public class GetCategoriesWithPaginationQueryTests
 	[Fact]
 	public async Task Should_ThrowNotFoundException()
 	{
+		// Arrange
 		var command = new GetCategoriesWithPaginationQuery(_expectedCategory.Id);
 
+		// Act
 		var exception
 			= await Assert.ThrowsAsync<NotFoundException>(async () => await _handler.Handle(command, default));
 
+		// Assert
 		Assert.Equal(
 			$"Entity \"Category\" ({_expectedCategory.Id}) was not found.",
 			exception.Message);

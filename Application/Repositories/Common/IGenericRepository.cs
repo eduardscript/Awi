@@ -11,4 +11,6 @@ public interface IGenericRepository<TEntity> where TEntity : BaseEntity
 	Task<TEntity> Update(TEntity entity);
 
 	Task Delete(TEntity entity);
+	
+	Task<(bool Exists, TEntity? Entity)> CheckExistence(Guid id);
 }

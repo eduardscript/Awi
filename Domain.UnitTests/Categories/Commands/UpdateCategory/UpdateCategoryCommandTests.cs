@@ -1,7 +1,7 @@
 ﻿using Application.Categories.Commands.UpdateCategory;
 using Application.Common.Exceptions;
 
-namespace Application.IntegrationTests.Categories.UpdateCategory;
+namespace Application.IntegrationTests.Categories.Commands.UpdateCategory;
 
 [Trait("Category", nameof(UpdateCategoryCommand))]
 public class UpdateCategoryCommandTests
@@ -40,8 +40,10 @@ public class UpdateCategoryCommandTests
 	[Fact]
 	public async Task Should_ThrowNotFoundException()
 	{
+		// Arrange
 		var updateCategoryCommand = new UpdateCategoryCommand(Guid.NewGuid(), "Test edit", null);
 
+		// Act & Assert
 		await Assert.ThrowsAsync<NotFoundException>(async () => await _handler.Handle(updateCategoryCommand, default));
 	}
 }

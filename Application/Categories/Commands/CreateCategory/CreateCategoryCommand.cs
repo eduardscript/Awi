@@ -1,4 +1,3 @@
-using Application.Categories.Common;
 using Application.Common.Exceptions;
 using Application.Repositories;
 
@@ -20,10 +19,13 @@ public sealed class CreateCategoryCommandHandler : IRequestHandler<CreateCategor
 
 	public async Task<Guid> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
 	{
-		if (request.ParentCategoryId is not null &&
-		    !await _categoryRepository.CheckCategoryExistence(request.ParentCategoryId.Value))
+		if (request.ParentCategoryId.HasValue)
 		{
-			throw new NotFoundException(nameof(Category), request.ParentCategoryId);
+			var parentCategory = await _categoryRepository.CheckExistence(request.ParentCategoryId.Value);
+			if (!parentCategory.Exists)
+			{
+				throw new NotFoundException(nameof(Category), request.ParentCategoryId.Value);
+			}
 		}
 
 		var newCategory = new Category

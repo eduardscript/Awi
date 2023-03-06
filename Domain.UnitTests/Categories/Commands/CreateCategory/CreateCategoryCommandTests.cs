@@ -1,7 +1,7 @@
 ﻿using Application.Categories.Commands.CreateCategory;
 using Application.Common.Exceptions;
 
-namespace Application.IntegrationTests.Categories.CreateCategory;
+namespace Application.IntegrationTests.Categories.Commands.CreateCategory;
 
 [Trait("Category", nameof(CreateCategoryCommand))]
 public class CreateCategoryCommandTests
@@ -46,11 +46,14 @@ public class CreateCategoryCommandTests
 	[Fact]
 	public async Task Should_ThrowNotFoundException()
 	{
+		// Arrange
 		var command = new CreateCategoryCommand(_expectedCategory.Name, _expectedCategory.ParentCategoryId);
 
+		// Act
 		var exception
 			= await Assert.ThrowsAsync<NotFoundException>(async () => await _handler.Handle(command, default));
 
+		// Assert
 		Assert.Equal(
 			$"Entity \"Category\" ({_expectedCategory.ParentCategoryId}) was not found.",
 			exception.Message);

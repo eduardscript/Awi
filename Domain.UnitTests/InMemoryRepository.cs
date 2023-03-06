@@ -41,6 +41,13 @@ internal class InMemoryRepository<TEntity> : DbContext, IGenericRepository<TEnti
 		await SaveChangesAsync();
 	}
 
+	public async Task<(bool Exists, TEntity? Entity)> CheckExistence(Guid id)
+	{
+		var entity = await GetById(id);
+
+		return new(entity is not null, entity);
+	}
+
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
 		optionsBuilder.UseInMemoryDatabase("TestsDb");

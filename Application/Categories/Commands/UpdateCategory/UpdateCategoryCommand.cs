@@ -20,18 +20,20 @@ public sealed class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategor
 
 	public async Task<Category> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
 	{
-		var existingCategory = await _categoryRepository.GetById(request.Id);
+		var existingCategory = await _categoryRepository.CheckExistence(request.Id);
 
-		if (existingCategory is null)
+		if (!existingCategory.Exists)
 		{
 			throw new NotFoundException(nameof(Category), request.Id);
 		}
 
-		existingCategory.Name = request.Name;
-		existingCategory.ParentCategoryId = request.ParentCategoryId;
+		existingCategory.Entity!.Name = request.Name;
+		
+		// TODO: Check if parent category id exists and write the tests to it
+		existingCategory.Entity!.ParentCategoryId = request.ParentCategoryId;
 
-		await _categoryRepository.Update(existingCategory);
+		await _categoryRepository.Update(existingCategory.Entity!);
 
-		return existingCategory;
+		return existingCategory.Entity!;
 	}
 }

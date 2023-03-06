@@ -18,14 +18,13 @@ public sealed class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategor
 
 	public async Task<Unit> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
 	{
-		var existingCategory = await _categoryRepository.GetById(request.Id);
-
-		if (existingCategory is null)
+		var existingCategory = await _categoryRepository.CheckExistence(request.Id);
+		if (!existingCategory.Exists)
 		{
 			throw new NotFoundException(nameof(Category), request.Id);
 		}
 
-		await _categoryRepository.Delete(existingCategory);
+		await _categoryRepository.Delete(existingCategory.Entity!);
 
 		return Unit.Value;
 	}
