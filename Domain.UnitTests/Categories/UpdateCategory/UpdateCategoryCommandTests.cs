@@ -34,6 +34,6 @@ public class UpdateCategoryCommandTests
         
         Assert.NotNull(updatedCategory);
         Assert.Equal(updatedCategoryCommand.Name, updatedCategory.Name);
-        Assert.NotEqual(oldCategory.Name, updatedCategory.Name);
+        Assert.NotEqual("Test", updatedCategory.Name);
     }
 }

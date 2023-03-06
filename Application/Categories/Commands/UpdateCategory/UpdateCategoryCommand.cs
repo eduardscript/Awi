@@ -28,21 +28,18 @@ public sealed class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategor
     
     public async Task<Category> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
-        // TODO: uncomment this
-        /*if (!await _categoryRepository.CheckCategoryExistence(request.Id))
+        var existingCategory = await _categoryRepository.GetById(request.Id);
+        
+        if (existingCategory is null)
         {
             throw new NotFoundException(nameof(Category), request.Id);
-        }*/
+        }
 
-        var updatedCategory = new Category()
-        {
-            Id = request.Id,
-            Name = request.Name,
-            ParentCategoryId = request.ParentCategoryId
-        };
+        existingCategory.Name = request.Name;
+        existingCategory.ParentCategoryId = request.ParentCategoryId;
 
-        await _categoryRepository.Update(updatedCategory);
+        await _categoryRepository.Update(existingCategory);
 
-        return updatedCategory;
+        return existingCategory;
     }
 }
