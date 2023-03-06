@@ -1,6 +1,5 @@
 ﻿using Application.Categories.Queries.GetCategoriesWithPagination;
 using Application.Common.Exceptions;
-using Domain.Entities;
 
 namespace Application.IntegrationTests.Categories.GetCategoriesWithPagination;
 

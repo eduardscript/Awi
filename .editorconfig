@@ -62,6 +62,8 @@ resharper_csharp_keep_blank_lines_in_code = 1
 resharper_csharp_keep_blank_lines_in_declarations = 1
 resharper_csharp_stick_comment = false
 resharper_csharp_tab_width = 4
+resharper_csharp_wrap_arguments_style = chop_if_long
+resharper_csharp_wrap_before_comma = false
 resharper_indent_nested_fixed_stmt = true
 resharper_indent_nested_foreach_stmt = true
 resharper_indent_nested_for_stmt = true
@@ -72,11 +74,14 @@ resharper_int_align_nested_ternary = true
 resharper_int_align_switch_expressions = true
 resharper_int_align_switch_sections = true
 resharper_local_function_body = expression_body
+resharper_max_invocation_arguments_on_line = 8
 resharper_method_or_operator_body = expression_body
 resharper_object_creation_when_type_not_evident = target_typed
 resharper_trailing_comma_in_multiline_lists = true
 resharper_trailing_comma_in_singleline_lists = true
 resharper_use_indent_from_vs = false
+resharper_wrap_arguments_style = wrap_if_long
+resharper_wrap_before_comma = false
 resharper_wrap_before_eq = true
 
 # ReSharper inspection severities

@@ -1,6 +1,5 @@
 ﻿using Application.Categories.Commands.CreateCategory;
 using Application.Common.Exceptions;
-using Domain.Entities;
 
 namespace Application.IntegrationTests.Categories.CreateCategory;
 

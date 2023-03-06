@@ -1,5 +1,4 @@
-﻿using System;
-using Domain.Entities.Common;
+﻿using Domain.Entities.Common;
 
 namespace Application.Repositories.Common;
 
