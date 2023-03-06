@@ -1,13 +1,12 @@
 ﻿using Domain.Entities.Common;
 
-namespace Domain.Entities
+namespace Domain.Entities;
+
+public class Category : BaseEntity
 {
-    public class Category : BaseEntity
-	{
-		public string Name { get; set; } = null!;
+	public string Name { get; set; } = null!;
 
-        public Guid? ParentCategoryId { get; set; }
+	public Guid? ParentCategoryId { get; set; }
 
-        public List<CategoryItem>? CategoryItems { get; set; }
-	}
+	public List<CategoryItem>? CategoryItems { get; set; }
 }
