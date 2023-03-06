@@ -10,6 +10,8 @@ namespace Application.Repositories.Common
 		Task<TEntity> Insert(TEntity entity);
 
 		Task<TEntity> Update(TEntity entity);
+
+		Task Delete(TEntity entity);
 	}
 }
 
