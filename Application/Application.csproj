@@ -1,39 +1,37 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <None Remove="Categories\"/>
-        <None Remove="Categories\Commands\"/>
-        <None Remove="Categories\Queries\"/>
-        <None Remove="MediatR.Extensions.Microsoft.DependencyInjection"/>
-        <None Remove="Repositories\"/>
-        <None Remove="Repositories\Common\"/>
-        <None Remove="Common\"/>
-        <None Remove="Common\Exceptions\"/>
-        <None Remove="Categories\Commands\CreateCategory\"/>
-        <None Remove="Categories\Queries\GetCategoriesWithPagination\"/>
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="Categories\"/>
-        <Folder Include="Categories\Commands\"/>
-        <Folder Include="Categories\Queries\"/>
-        <Folder Include="Repositories\"/>
-        <Folder Include="Repositories\Common\"/>
-        <Folder Include="Common\"/>
-        <Folder Include="Common\Exceptions\"/>
-        <Folder Include="Categories\Commands\CreateCategory\"/>
-        <Folder Include="Categories\Queries\"/>
-        <Folder Include="Categories\Queries\GetCategoriesWithPagination\"/>
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0"/>
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\Domain\Domain.csproj"/>
-    </ItemGroup>
+  <ItemGroup>
+    <None Remove="Categories\" />
+    <None Remove="Categories\Commands\" />
+    <None Remove="Categories\Queries\" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Common\" />
+    <None Remove="Common\" />
+    <None Remove="Common\Exceptions\" />
+    <None Remove="Categories\Commands\CreateCategory\" />
+    <None Remove="Categories\Queries\GetCategoriesWithPagination\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Categories\Queries\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Common\" />
+    <Folder Include="Common\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Categories\Commands\CreateCategory\" />
+    <Folder Include="Categories\Queries\" />
+    <Folder Include="Categories\Queries\GetCategoriesWithPagination\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
 </Project>

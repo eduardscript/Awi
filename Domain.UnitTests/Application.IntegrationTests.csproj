@@ -1,42 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
-        <IsPackable>false</IsPackable>
-        <AssemblyName>Domain.UnitTests</AssemblyName>
-    </PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <AssemblyName>Domain.UnitTests</AssemblyName>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1"/>
-        <PackageReference Include="xunit" Version="2.4.2"/>
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="coverlet.collector" Version="3.2.0">
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2"/>
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.2.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.2" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Application\Application.csproj"/>
-        <ProjectReference Include="..\Domain\Domain.csproj"/>
-    </ItemGroup>
-    <ItemGroup>
-        <None Remove="Microsoft.EntityFrameworkCore.InMemory"/>
-        <None Remove="Categories\"/>
-        <None Remove="Categories\CreateCategory\"/>
-        <None Remove="Categories\GetCategoriesWithPagination\"/>
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="Categories\"/>
-        <Folder Include="Categories\CreateCategory\"/>
-        <Folder Include="Categories\GetCategoriesWithPagination\"/>
-    </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore.InMemory" />
+    <None Remove="Categories\" />
+    <None Remove="Categories\CreateCategory\" />
+    <None Remove="Categories\GetCategoriesWithPagination\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Categories\CreateCategory\" />
+    <Folder Include="Categories\GetCategoriesWithPagination\" />
+    <Folder Include="Categories\DeleteCategory\" />
+  </ItemGroup>
 </Project>
