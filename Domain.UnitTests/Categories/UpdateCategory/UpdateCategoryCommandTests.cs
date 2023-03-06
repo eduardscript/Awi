@@ -1,6 +1,8 @@
 ﻿using Application.Categories.Commands.UpdateCategory;
 using Domain.Entities;
 using Application.Categories.Commands.CreateCategory;
+using Application.Common.Exceptions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Application.IntegrationTests.Categories.UpdateCategory;
@@ -35,5 +37,13 @@ public class UpdateCategoryCommandTests
         Assert.NotNull(updatedCategory);
         Assert.Equal(updatedCategoryCommand.Name, updatedCategory.Name);
         Assert.NotEqual("Test", updatedCategory.Name);
+    }
+
+    [Fact]
+    public async Task Should_ThrowNotFoundException()
+    {
+	    var updateCategoryCommand = new UpdateCategoryCommand(Guid.NewGuid(), "Test edit", null);
+
+	    await Assert.ThrowsAsync<NotFoundException>(async () => await _handler.Handle(updateCategoryCommand, default));
     }
 }

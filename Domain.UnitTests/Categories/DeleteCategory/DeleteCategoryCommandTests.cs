@@ -1,4 +1,5 @@
 ﻿using Application.Categories.Commands.DeleteCategory;
+using Application.Common.Exceptions;
 using Domain.Entities;
 
 namespace Application.IntegrationTests.Categories.DeleteCategory;
@@ -29,5 +30,13 @@ public class DeleteCategoryCommandTests
         await _handler.Handle(deleteCategoryCommand, default);
         
         Assert.Null(await _repository.GetById(category.Id));
+    }
+
+    [Fact]
+    public async Task Should_ThrowNotFoundException()
+    {
+	    var deleteCategoryCommand = new DeleteCategoryCommand(Guid.NewGuid());
+
+	    await Assert.ThrowsAsync<NotFoundException>(async () => await _handler.Handle(deleteCategoryCommand, default));
     }
 }
